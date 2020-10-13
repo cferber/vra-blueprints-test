@@ -1,5 +1,5 @@
 name: CentOS Server
-version: 9
+version: 21
 formatVersion: 1
 inputs: {}
 resources:
