@@ -1,5 +1,5 @@
 name: Linux for Developers
-version: 1
+version: 2
 formatVersion: 1
 inputs: {}
 resources:
@@ -11,6 +11,6 @@ resources:
         - 0
     properties:
       image: CF-CentOS
-      cpuCount: 1
+      cpuCount: 2
       totalMemoryMB: 1024
 
