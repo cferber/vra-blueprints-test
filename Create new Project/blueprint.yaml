@@ -1,0 +1,34 @@
+inputs:
+  project_name:
+    type: string
+    title: Name of new Project
+  app_catalog:
+    type: string
+    title: Application Catalog
+    oneOf:
+      - title: Engineering Apps
+        const: a4f4407e-fca5-4aa1-8f7b-347824d13480
+      - title: Production Line Apps
+        const: f486301a-6748-4fe4-a205-f9eaffbd74a8
+resources:
+  terraform:
+    type: Cloud.Terraform.Configuration
+    metadata:
+      layoutPosition:
+        - 0
+        - 0
+    properties:
+      variables:
+        refresh_token: zZnmL4PoZi7JMmPTaOjtXSiVYMJVr6yn
+        url: VC02 / SPACE-DC
+        insecure: 'true'
+        zone_name: 'https://vra801.space.local'
+        project_name: '${input.project_name}'
+        usertoadd: '${env.requestedBy}'
+      providers: []
+      terraformVersion: 0.13.5
+      configurationSource:
+        repositoryId: 83a56d24-4874-4d08-b088-9c286f28e8bf
+        commitId: b652ae305621d109c64be665fd9f4919dfe30b00
+        sourceDirectory: vra-project
+
