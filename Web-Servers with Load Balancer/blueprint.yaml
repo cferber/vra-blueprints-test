@@ -1,5 +1,5 @@
 name: Web-Servers with Load Balancer
-version: 1
+version: 2
 description: CentOS with on-demand Network created by NSX
 formatVersion: 1
 inputs:
@@ -13,20 +13,12 @@ inputs:
 resources:
   Cloud_SecurityGroup_1:
     type: Cloud.SecurityGroup
-    metadata:
-      layoutPosition:
-        - 0
-        - 0
     properties:
       securityGroupType: existing
       constraints:
         - tag: 'sg:webservers'
   Cloud_LoadBalancer_1:
     type: Cloud.LoadBalancer
-    metadata:
-      layoutPosition:
-        - 0
-        - 1
     properties:
       routes:
         - port: '80'
@@ -42,14 +34,10 @@ resources:
     type: Cloud.Machine
     dependsOn:
       - Cloud_SecurityGroup_1
-    metadata:
-      layoutPosition:
-        - 0
-        - 2
     properties:
       count: '${input.webserver-count}'
       flavor: CF-Small
-      imageRef: TEMP-CentOS7-02/snap09
+      image: CentOS7
       customizationSpec: vra-linux-custom
       networks:
         - network: '${resource.Cloud_NSX_Network_1.id}'
@@ -57,10 +45,6 @@ resources:
             - '${resource.Cloud_SecurityGroup_1.id}'
   Cloud_NSX_Network_1:
     type: Cloud.NSX.Network
-    metadata:
-      layoutPosition:
-        - 1
-        - 0
     properties:
       networkType: routed
 
