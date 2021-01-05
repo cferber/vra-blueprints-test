@@ -1,5 +1,5 @@
 name: Linux Server
-version: 3
+version: 5
 formatVersion: 1
 inputs:
   env:
@@ -15,9 +15,10 @@ inputs:
   OS:
     type: string
     enum:
-      - CF-Ubuntu
-      - CF-CentOS
-    default: CF-Ubuntu
+      - Ubuntu
+      - CentOS7
+      - CentOS8
+    default: Ubuntu
     title: Operating System
     description: Target OS
   Availability:
@@ -32,10 +33,6 @@ inputs:
 resources:
   Cloud_Machine_1:
     type: Cloud.Machine
-    metadata:
-      layoutPosition:
-        - 0
-        - 0
     properties:
       image: '${input.OS}'
       flavor: CF-Small
