@@ -1,0 +1,27 @@
+name: CentOS on-demand network
+version: 9
+description: CentOS with on-demand Network created by NSX
+formatVersion: 1
+inputs:
+  network:
+    type: string
+    enum:
+      - private
+      - outbound
+      - routed
+    default: outbound
+    title: Network Type
+    description: Network Type
+resources:
+  Cloud_Machine_1:
+    type: Cloud.Machine
+    properties:
+      flavor: CF-Small
+      image: CentOS7
+      networks:
+        - network: '${resource.Cloud_NSX_Network_1.id}'
+  Cloud_NSX_Network_1:
+    type: Cloud.NSX.Network
+    properties:
+      networkType: '${input.network}'
+
