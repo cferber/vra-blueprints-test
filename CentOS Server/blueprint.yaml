@@ -1,5 +1,5 @@
 name: CentOS Server
-version: 9
+version: 10
 formatVersion: 1
 inputs: {}
 resources:
@@ -7,8 +7,8 @@ resources:
     type: Cloud.vSphere.Machine
     metadata:
       layoutPosition:
-        - 1
-        - 1
+        - 0
+        - 0
     properties:
       CreateFileInGuest: true
       image: CentOS7
@@ -21,7 +21,7 @@ resources:
     type: Cloud.vSphere.Network
     metadata:
       layoutPosition:
-        - 2
+        - 1
         - 0
     properties:
       networkType: existing
