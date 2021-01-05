@@ -61,7 +61,7 @@ resources:
         - 0
     properties:
       name: mysql
-      image: CF-Ubuntu
+      image: Ubuntu
       flavor: '${input.size}'
       sshKeyName: CF-Key-US-Virginia
       constraints:
@@ -101,7 +101,7 @@ resources:
         - 1
     properties:
       name: wordpress
-      image: CF-Ubuntu
+      image: Ubuntu
       count: '${input.count}'
       storage:
         disks:
