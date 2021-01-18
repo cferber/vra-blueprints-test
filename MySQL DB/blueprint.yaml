@@ -20,7 +20,7 @@ inputs:
   userpassword:
     type: string
     pattern: '[a-z0-9A-Z@#$]+'
-    encrypted: true
+    encrypted: false
     title: Database Password
     description: Database Password
   archiveDiskSize:
