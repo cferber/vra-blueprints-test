@@ -69,6 +69,7 @@ resources:
          - sed -e '/bind-address/ s/^#*/#/' -i /etc/mysql/mysql.conf.d/mysqld.cnf
          - service mysql restart
          - mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'mysqlpassword';"
+         - mysql -e "GRANT ALL PRIVILEGES ON *.* TO '${input.username}'@'%' IDENTIFIED BY '${input.userpassword}';"
          - mysql -e "FLUSH PRIVILEGES;"
       networks:
         - name: '${resource["Target-Network"].name}'
