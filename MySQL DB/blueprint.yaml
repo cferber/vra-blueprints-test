@@ -1,7 +1,7 @@
 name: MySQL DB
 version: 1
 iteration: 1
-description: More Complex BP with External Storage
+description: MySQL Database Blueprint
 inputs:
   size:
     type: string
@@ -38,10 +38,6 @@ inputs:
 resources:
   DBTier:
     type: Cloud.vSphere.Machine
-    metadata:
-      layoutPosition:
-        - 0
-        - 0
     properties:
       name: mysql
       image: Ubuntu
@@ -76,10 +72,6 @@ resources:
           network: '${resource["Target-Network"].id}'
   Target-Network:
     type: Cloud.Network
-    metadata:
-      layoutPosition:
-        - 1
-        - 0
     properties:
       networkType: existing
 
