@@ -1,5 +1,5 @@
 name: CentOS Server
-version: 11
+version: 12
 formatVersion: 1
 inputs: {}
 resources:
@@ -12,7 +12,7 @@ resources:
     properties:
       CreateFileInGuest: true
       image: CentOS7
-      cpuCount: 2
+      cpuCount: 3
       totalMemoryMB: 1024
       networks:
         - network: '${resource.Cloud_vSphere_Network_1.id}'
